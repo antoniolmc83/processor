@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: myprocessor
+  cloud:
+    stream:
+      bindings:
+        producer:
+          destination: mychannel-out
+        source:
+          destination: mychannel
+          group: myconsumer-group
+
+app:
+  myprocessor:
+    spring:
+      cloud:
+        stream:
+          bindings:
+            producer:
+              destination: mychannel-out
+            source:
+              destination: mychannel
+              group: myconsumer-group
